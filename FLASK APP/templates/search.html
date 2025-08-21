@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body>
+    <h2>Search Page</h2>
+    <form method="GET">
+        Search: <input type="text" name="q">
+        <input type="submit" value="Search">
+    </form>
+    {% if query %}
+        <p>Results for: {{ query|safe }}</p>  <!-- ❌ Vulnerable to XSS -->
+    {% endif %}
+</body>
+</html>
